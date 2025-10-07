@@ -14,11 +14,19 @@
   box-sizing: border-box;
 }
 
+/* NOVO: Scroll Suave Universal (Polimento Final) */
+html {
+    scroll-behavior: smooth; 
+}
+
 body {
   margin: 0;
   min-height: 100vh;
   background-color: var(--bg);
   background-image: url("https://i.postimg.cc/VvkgXPwr/19624070-F917.jpg");
+  /* Parallax Scroll no Background */
+  background-attachment: fixed; 
+  background-position: center top; 
   font-family: 'Cormorant Garamond', serif;
   display: flex;
   align-items: center;
@@ -27,14 +35,30 @@ body {
   color: var(--text-dark);
 }
 
+/* Estilo para a transição inicial (Carregamento Suave) */
+body.loading {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+body.loaded {
+    opacity: 1;
+}
+
 /* --- 2. ESTILOS DA PÁGINA DE CAPA (index.html) --- */
 .cover-container {
   max-width: 600px;
   padding: 10px;
-  background: white;
+  background: var(--card);
   border-radius: 12px;
   box-shadow: 0 12px 40px rgba(176, 143, 92, 0.15);
   text-align: center;
+  /* Transição para o efeito de hover */
+  transition: transform 0.4s ease, box-shadow 0.4s ease; 
+}
+/* Efeito de elevação sutil ao passar o rato (Divino) */
+.cover-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(176, 143, 92, 0.3);
 }
 
 .couple-photo {
@@ -79,6 +103,31 @@ body {
   background: var(--card);
 }
 
+/* Cabeçalho Fixo (Sticky Header) */
+.sticky-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--card);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    z-index: 50;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-100%); 
+    transition: transform 0.4s ease-out;
+}
+.sticky-header.is-scrolled {
+    transform: translateY(0); 
+}
+.sticky-header .names {
+    font-size: 24px;
+    margin: 0;
+    color: var(--accent);
+}
+
 h1, h2, h3 {
   font-family: 'Cormorant Garamond', serif;
   margin: 0;
@@ -93,6 +142,7 @@ p { margin: 12px 0 18px; color: var(--muted); font-size: 18px; line-height: 1.6;
 .section {
   padding: 8px;
   text-align: center;
+  position: relative;
 }
 
 /* Hero Section */
@@ -158,7 +208,7 @@ p { margin: 12px 0 18px; color: var(--muted); font-size: 18px; line-height: 1.6;
   cursor: pointer;
   border: none;
   font-size: 13px;
-  transition: background-color .2s ease;
+  transition: background-color .2s ease, transform .1s ease; 
   text-align: center;
 }
 .btn-primary {
@@ -168,6 +218,18 @@ p { margin: 12px 0 18px; color: var(--muted); font-size: 18px; line-height: 1.6;
 .btn-primary:hover {
   background-color: #7b513d;
 }
+
+/* ANIMAÇÃO: Animação de pulsação para o botão principal */
+.hero-button-pulse {
+    animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(121, 184, 158, 0.7); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(121, 184, 158, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(121, 184, 158, 0); }
+}
+
+
 .pill {
   display: inline-block;
   background: rgba(161, 106, 80, 0.1);
@@ -218,33 +280,6 @@ p { margin: 12px 0 18px; color: var(--muted); font-size: 18px; line-height: 1.6;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Gift Section */
-.gift-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-  padding: 30px;
-  border-radius: 12px;
-  border: 1px solid rgba(161, 106, 80, 0.2);
-  background: #fdfcfb;
-  margin-top: 20px;
-}
-.gift-card svg {
-  color: var(--accent);
-  width: 40px;
-  height: 40px;
-}
-.gift-card p {
-  margin: 0;
-  font-size: 16px;
-  line-height: 1.5;
-}
-.gift-card .text-muted {
-  font-size: 14px;
-}
-
 /* Galeria */
 .gallery-grid {
   display: grid;
@@ -252,27 +287,68 @@ p { margin: 12px 0 18px; color: var(--muted); font-size: 18px; line-height: 1.6;
   gap: 10px;
   margin-top: 30px;
 }
+
+/* EFEITO: Estilos de Tilt/3D */
+.gallery-image-container {
+    perspective: 1000px; 
+    display: inline-block;
+}
 .gallery-grid img {
   width: 100%;
   aspect-ratio: 1/1;
   object-fit: cover;
   border-radius: 8px;
   cursor: zoom-in;
-  transition: transform .2s ease;
-}
-.gallery-grid img:hover {
-  transform: scale(1.02);
+  transition: transform 0.4s cubic-bezier(0.2, 0.6, 0.2, 1); 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* --- 4. ANIMAÇÕES --- */
+/* --- 4. ANIMAÇÕES & DECORAÇÕES --- */
+
+/* Divisor Floral Minimalista */
+.floral-divider {
+    margin: 30px auto;
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(121, 184, 158, 0.5), transparent);
+    position: relative;
+}
+
+/* Estilos para o ícone SVG de flor */
+.animated-flower-svg {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    color: var(--accent);
+    top: 50%;
+    transform: translateY(-50%) scale(0.8);
+    opacity: 0.6;
+    animation: float 8s ease-in-out infinite;
+}
+
+/* Posições das Flores (para a animação de flutuação) */
+.animated-flower-1 { left: 10%; animation-delay: 0s; }
+.animated-flower-2 { right: 15%; animation-delay: 2s; animation-duration: 9s;}
+.animated-flower-3 { left: 5%; bottom: -50px; animation-delay: 1s; animation-duration: 7s; }
+.animated-flower-4 { right: 5%; top: -50px; animation-delay: 3s; animation-duration: 6s; }
+
+
+/* Animação de Flutuação */
+@keyframes float {
+    0% { transform: translate(0, 0px) rotate(0deg); opacity: 0.5; }
+    50% { transform: translate(5px, 10px) rotate(5deg); opacity: 0.8; }
+    100% { transform: translate(0, 0px) rotate(0deg); opacity: 0.5; }
+}
+
+/* Efeito de Zoom (melhoria da animação fade-in) */
 .fade-in-section {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity .9s ease-out, transform .9s ease-out;
+  transform: translateY(20px) scale(0.98);
+  transition: opacity 0.9s ease-out, transform 0.9s ease-out;
 }
 .fade-in-section.is-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
 }
 
 /* --- 5. ESTILOS DO MODAL (Pop-up) --- */
@@ -304,18 +380,14 @@ p { margin: 12px 0 18px; color: var(--muted); font-size: 18px; line-height: 1.6;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   width: 90%;
   max-width: 600px;
-  
   max-height: 90vh; 
   overflow-y: auto; 
-  
   opacity: 0;
   transform: scale(0.95);
-  transition: all .25s ease;
+  transition: all .4s cubic-bezier(0.25, 0.8, 0.25, 1.2);
 }
 .modal.open .modal-card { 
   transform: scale(1);
-  /* CORREÇÃO AQUI: Garante que o conteúdo do modal se torna visível */
-  /* Sem esta linha, a opacidade permanecia a 0, tornando o conteúdo invisível */
   opacity: 1; 
 }
 
@@ -326,11 +398,11 @@ input, textarea, select { width: 100%; padding: 10px; border-radius: 8px; border
 textarea { min-height: 100px; }
 .contact-info-block { text-align: left; padding: 12px; border: 1px solid #eee; border-radius: 8px; margin-bottom: 10px; }
 .contact-info-block strong { color: var(--accent); font-family: 'Poppins', sans-serif; font-size: 14px; }
-/* Adicione esta regra ao seu style.css, por exemplo, perto dos outros estilos de botão */
+/* Botão Ver Mapa Pequeno */
 .small-map-btn {
-    display: block; /* Ocupa a largura total do item da agenda */
+    display: block; 
     width: fit-content;
-    margin: 8px 0 0 auto; /* Alinha o botão à direita */
+    margin: 8px 0 0 auto; 
     padding: 5px 10px;
     font-size: 13px;
     font-family: 'Poppins', sans-serif;
@@ -341,8 +413,79 @@ textarea { min-height: 100px; }
     background: rgba(54, 53, 53, 0.05);
 }
 /* Botão de controlo da música */
-#musicControl { position: fixed; bottom: 15px; right: 15px; z-index: 101; background: rgba(255, 255, 255, 0.8); border: 1px solid #eee; border-radius: 50%; width: 70px; height: 70px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); }
+#musicControl { 
+    position: fixed; 
+    bottom: 15px; 
+    right: 15px; 
+    z-index: 101; 
+    background: var(--card); 
+    border: 1px solid #eee; 
+    border-radius: 50%; 
+    width: 40px; 
+    height: 40px; 
+    cursor: pointer; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    transition: background 0.2s; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
 #musicControl:hover { background: rgba(255, 255, 255, 1); }
-#musicIcon { color: var(--accent); }
-#musicControl.playing #musicIcon { animation: spin 2s linear infinite; }
+#musicControl svg { color: var(--accent); }
+#musicControl.playing svg { animation: spin 2s linear infinite; }
 @keyframes spin { 100% { transform: rotate(360deg); } }
+
+/* Lightbox da Galeria (Zoom nas Imagens) */
+#lightboxModal .modal-card {
+    background: transparent;
+    box-shadow: none;
+    max-width: 90vw;
+    padding: 0;
+}
+#lightboxModal img {
+    max-width: 100%;
+    max-height: 80vh;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+/* NOVO: Botão Voltar ao Topo (CHAVE DE OURO) */
+#backToTop {
+    position: fixed;
+    bottom: 60px; /* Acima do botão da música */
+    right: 15px;
+    z-index: 101;
+    background-color: var(--accent);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+}
+
+#backToTop.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+#backToTop:hover {
+    background-color: #6a9c85; /* Tonalidade ligeiramente mais escura */
+    transform: scale(1.05);
+}
+#backToTop svg {
+    width: 18px;
+    height: 18px;
+    stroke: currentColor;
+    stroke-width: 2;
+    fill: none;
+}

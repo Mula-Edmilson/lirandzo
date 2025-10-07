@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Convite de Casamento — Anícia & Nelson</title>
   
+  <link rel="icon" type="image/png" href="https://i.postimg.cc/T3tNdXL6/lirandzo.png">
+
   <meta property="og:title" content="Convite de Casamento — Anícia & Nelson">
   <meta property="og:description" content="Junte-se a nós para celebrar o nosso casamento e o início de uma nova etapa das nossas vidas.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://static.wixstatic.com/media/819ea0_b4ef6562eb6d4a4b9b4a2b2cf908c93f~mv2.jpg">
-  <meta property="og:url" content="URL_DO_SEU_SITE_AQUI">
+  <meta property="og:type" content="lirandzo.com">
+  <meta property="og:image" content="https://i.postimg.cc/wB66B0vk/2T2A4873.jpg"> <meta property="og:url" content="edmilsonmula.info">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,16 +18,22 @@
   
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="loading">
   
   <audio id="backgroundMusic" loop src="https://static.wixstatic.com/mp3/819ea0_e333d443f2f545e59d79429cdd3c1361.mp3"></audio>
   <button id="musicControl" aria-label="Controlar música">
     <svg id="musicIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13M9 18a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM21 16a4 4 0 1 1-8 0 4 4 0 0 1 8 0z"/></svg>
   </button>
   
+  <div class="sticky-header">
+      <h1 class="names">Anícia & Nelson</h1>
+  </div>
+  
   <main class="invite-wrap" role="main" aria-labelledby="inviteTitle">
     
     <header class="hero">
+      <svg class="animated-flower-svg animated-flower-4" style="top: 20px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-8h2v-7h-2v7zM15 9h-2v-4h2v4zM9 9h2v-4H9v4zM16.5 12h-2v-2h2v2zM7.5 12h2v-2h-2v2z"/></svg>
+      <svg class="animated-flower-svg animated-flower-3" style="bottom: 20px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-8h2v-7h-2v7zM15 9h-2v-4h2v4zM9 9h2v-4H9v4zM16.5 12h-2v-2h2v2zM7.5 12h2v-2h-2v2z"/></svg>
      
       <div class="hero-content">
         <p class="lead">CONVIDAMO-LO(A) A CELEBRAR O NOSSO CASAMENTO</p>
@@ -37,6 +44,7 @@
             <div class="countdown-item"><span id="minutes">00</span><small>Minutos</small></div>
             <div class="countdown-item"><span id="seconds">00</span><small>Segundos</small></div>
         </div>
+        <a href="#guia-evento" class="btn btn-primary btn-cover hero-button-pulse" style="margin-top: 20px;">VER DETALHES DO EVENTO</a>
       </div>
     </header>
 
@@ -72,6 +80,10 @@
       </p>
     </section>
       
+    <div class="floral-divider fade-in-section">
+      <svg class="animated-flower-svg animated-flower-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-8h2v-7h-2v7zM15 9h-2v-4h2v4zM9 9h2v-4H9v4zM16.5 12h-2v-2h2v2zM7.5 12h2v-2h-2v2z"/></svg>
+      <svg class="animated-flower-svg animated-flower-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-8h2v-7h-2v7zM15 9h-2v-4h2v4zM9 9h2v-4H9v4zM16.5 12h-2v-2h2v2zM7.5 12h2v-2h-2v2z"/></svg>
+    </div>
     <section class="section fade-in-section" style="padding-top: 30px; padding-bottom: 30px; background: #deede7; border-radius: 12px; margin: 0 10px;" aria-label="Detalhes do evento">
       <h3 class="section-title">🗓 Agenda do Evento</h3>
       <div class="pill">Data: 13 Dezembro 2025</div>
@@ -106,14 +118,27 @@
       </div>
     </section>
     
-    <section class="section fade-in-section">
-      <div class="history-grid">
-            <img src="https://i.postimg.cc/9fJcwZRS/2T2A4974.jpg" alt="Momentos especiais do casal">
-            <img src="https://i.postimg.cc/MGdzfVMm/2T2A4899.jpg" alt="Foto do pedido de noivado">
-            <img src="https://i.postimg.cc/BvMJPHLF/2-T2-A4865-2.jpg" alt="Foto de uma viagem recente do casal">
-      </div>
+    <div class="floral-divider fade-in-section">
+      <svg class="animated-flower-svg animated-flower-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-8h2v-7h-2v7zM15 9h-2v-4h2v4zM9 9h2v-4H9v4zM16.5 12h-2v-2h2v2zM7.5 12h2v-2h-2v2z"/></svg>
+    </div>
+    <section class="section fade-in-section" id="galeria">
+      <h2 style="margin-bottom: 20px;">Galeria de Momentos</h2>
+      <div class="gallery-grid">
+            <div class="gallery-image-container">
+                <img src="https://i.postimg.cc/9fJcwZRS/2T2A4974.jpg" alt="Momentos especiais do casal" data-src="https://i.postimg.cc/9fJcwZRS/2T2A4974.jpg">
+            </div>
+            <div class="gallery-image-container">
+                <img src="https://i.postimg.cc/MGdzfVMm/2T2A4899.jpg" alt="Foto do pedido de noivado" data-src="https://i.postimg.cc/MGdzfVMm/2T2A4899.jpg">
+            </div>
+            <div class="gallery-image-container">
+                <img src="https://i.postimg.cc/BvMJPHLF/2-T2-A4865-2.jpg" alt="Foto de uma viagem recente do casal" data-src="https://i.postimg.cc/BvMJPHLF/2-T2-A4865-2.jpg">
+            </div>
+            </div>
     </section>
 
+    <div class="floral-divider fade-in-section">
+      <svg class="animated-flower-svg animated-flower-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-8h2v-7h-2v7zM15 9h-2v-4h2v4zM9 9h2v-4H9v4zM16.5 12h-2v-2h2v2zM7.5 12h2v-2h-2v2z"/></svg>
+    </div>
     <section class="section fade-in-section " id="guia-evento" aria-labelledby="guiaTitle" style="margin-top: 10px; padding-top: 20px; padding-bottom: 30px; background: #deede7; border-radius: 20px; margin: 0 10px;">
         <h2 id="guiaTitle">Guia do Evento</h2>
         <p class="text-muted">Tudo o que precisa de saber para celebrar connosco.</p>
@@ -195,13 +220,19 @@
         <button type="button" class="btn btn-primary" data-close-modal style="width:100%; margin-top:15px">Obrigado(a)!</button>
     </div>
   </div>
+  
+  <div class="modal" id="lightboxModal" role="dialog" aria-modal="true" aria-labelledby="lightboxTitle">
+      <div class="modal-card">
+          <img id="lightboxImage" src="" alt="Imagem ampliada da galeria" />
+          <button type="button" class="btn btn-ghost" data-close-modal style="position: absolute; top: 10px; right: 10px; z-index: 110; color: white; background: rgba(0,0,0,0.5);">Fechar</button>
+      </div>
+  </div>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
 
-      // --- CONFIGURAÇÕES CORRIGIDAS ---
+      // --- CONFIGURAÇÕES ---
       const HOST_WHATSAPP_NUMBER = '+258846797664';
-      // Endereços separados (usando os códigos Plus Code para maior precisão)
       const ADDRESS_RELIGIOSA = '5J7R+GFJ Igreja presbiteriana- paróquia de Guava, Marracuene';
       const ADDRESS_CIVIL_COPO_DE_AGUA = '6H3J+R8J Chakara Do Amor Eventos, Zimpeto - Moçambique!, Maputo'; 
       const EVENT_DATE = "2025-12-13T09:00:00"; 
@@ -210,14 +241,31 @@
       const music = document.getElementById('backgroundMusic');
       const musicControl = document.getElementById('musicControl');
       const rsvpForm = document.getElementById('rsvpForm');
-      
-      // As variáveis para os botões do mapa estão prontas:
       const mapBtnGeral = document.getElementById('mapBtn');
       const mapBtnReligiosa = document.getElementById('mapBtnReligiosa'); 
       const mapBtnCivil = document.getElementById('mapBtnCivil');
       const shareBtn = document.getElementById('shareBtn');
+      const stickyHeader = document.querySelector('.sticky-header');
+      const galleryImages = document.querySelectorAll('.gallery-grid img');
+      const lightboxModal = document.getElementById('lightboxModal');
+      const lightboxImage = document.getElementById('lightboxImage');
+      const body = document.body;
+      // NOVO: Referência para o botão "Voltar ao Topo"
+      const backToTopBtn = document.getElementById('backToTop'); 
       
-      // --- BLOCO DE CONTROLO DE MÚSICA (Robusto) ---
+      // 1. Transição de Carregamento Suave
+      window.onload = () => {
+          body.classList.remove('loading');
+          body.classList.add('loaded');
+      };
+      setTimeout(() => {
+          if (body.classList.contains('loading')) {
+              body.classList.remove('loading');
+              body.classList.add('loaded');
+          }
+      }, 500); 
+
+      // --- BLOCO DE CONTROLO DE MÚSICA ---
       const updateMusicIcon = () => {
         musicControl.innerHTML = music.paused 
             ? `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5zM23 9l-6 6M17 9l6 6"/></svg>`
@@ -248,22 +296,108 @@
       });
       
       updateMusicIcon();
+      
+      // Lógica do Sticky Header e Botão Voltar ao Topo
+      const handleScrollEvents = () => {
+          // Sticky Header
+          if (window.scrollY > 100) {
+              stickyHeader.classList.add('is-scrolled');
+          } else {
+              stickyHeader.classList.remove('is-scrolled');
+          }
+          
+          // Botão Voltar ao Topo (Aparece após 400px de rolagem)
+          if (window.scrollY > 400) {
+              backToTopBtn.classList.add('show');
+          } else {
+              backToTopBtn.classList.remove('show');
+          }
+      };
+      window.addEventListener('scroll', handleScrollEvents);
+      
+      // Lógica de Scroll do Botão Voltar ao Topo
+      if (backToTopBtn) {
+          backToTopBtn.addEventListener('click', () => {
+              window.scrollTo({
+                  top: 0,
+                  behavior: 'smooth' 
+              });
+          });
+      }
 
-      // --- CORREÇÃO DO GOOGLE MAPS ---
-      // FUNÇÃO AUXILIAR PARA CRIAR LINKS DO GOOGLE MAPS
-      const createMapLink = (address) => {
+      // 2. Efeito Tilt nas Imagens da Galeria
+      const MAX_TILT = 5; 
+      const containers = document.querySelectorAll('.gallery-image-container');
+      
+      containers.forEach(container => {
+        const img = container.querySelector('img');
+
+        const handleMove = (e) => {
+            const rect = container.getBoundingClientRect();
+            let x = e.clientX || (e.touches ? e.touches[0].clientX : undefined);
+            let y = e.clientY || (e.touches ? e.touches[0].clientY : undefined);
+
+            if (x === undefined || y === undefined) return;
+
+            const offsetX = (x - rect.left) / rect.width;
+            const offsetY = (y - rect.top) / rect.height;
+
+            const tiltX = (offsetY - 0.5) * 2 * -MAX_TILT; 
+            const tiltY = (offsetX - 0.5) * 2 * MAX_TILT; 
+
+            img.style.transform = `scale(1.05) perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+        };
+
+        const handleEnter = () => {
+            img.style.transition = 'transform 0.1s linear';
+        };
+
+        const handleLeave = () => {
+            img.style.transition = 'transform 0.4s cubic-bezier(0.2, 0.6, 0.2, 1)';
+            img.style.transform = 'scale(1) rotateX(0deg) rotateY(0deg)';
+        };
+
+        container.addEventListener('mousemove', handleMove);
+        container.addEventListener('mouseenter', handleEnter);
+        container.addEventListener('mouseleave', handleLeave);
+        container.addEventListener('touchmove', handleMove);
+        container.addEventListener('touchend', handleLeave);
+        container.addEventListener('touchstart', handleEnter);
+      });
+
+      // Lightbox Logic - ABRIR
+      galleryImages.forEach(img => {
+          img.addEventListener('click', () => {
+              lightboxImage.src = img.getAttribute('data-src');
+              lightboxModal.classList.add('open');
+          });
+      });
+      
+      // Lightbox Logic - FECHAR
+      if (lightboxModal) {
+          lightboxModal.addEventListener('click', (e) => {
+              if (e.target === lightboxModal || e.target.closest('[data-close-modal]')) {
+                  lightboxModal.classList.remove('open');
+              }
+          });
+      }
+
+
+      // --- CORREÇÃO FINAL E UNIVERSAL DO GOOGLE MAPS ---
+      const createMapLink = (address, isDirections = false) => {
         const encodedAddress = encodeURIComponent(address);
-        // O URL CORRETO para abrir no Google Maps:
+        if (isDirections) {
+            return `https://www.google.com/maps/dir/?api=1&destination=${encodedAddress}`; 
+        }
         return `https://www.google.com/maps/search/?api=1&query=${encodedAddress}`; 
       };
 
-      // ATUALIZADO E CORRIGIDO: Aplica os links do Google Maps aos botões
-      if (mapBtnGeral) mapBtnGeral.href = createMapLink(ADDRESS_CIVIL_COPO_DE_AGUA); 
-      // Estes botões funcionarão se você os adicionar ao seu HTML:
-      if (mapBtnReligiosa) mapBtnReligiosa.href = createMapLink(ADDRESS_RELIGIOSA);
+      // Aplicação dos links corrigidos
+      if (mapBtnGeral) mapBtnGeral.href = createMapLink(ADDRESS_CIVIL_COPO_DE_AGUA, true); 
+      if (mapBtnReligiosa) mapBtnReligiosa.href = createMapLink(ADDRESS_RELIGIOSA); 
       if (mapBtnCivil) mapBtnCivil.href = createMapLink(ADDRESS_CIVIL_COPO_DE_AGUA); 
 
-      // --- RESTANTE DO CÓDIGO ---
+      // --- RESTANTE DO CÓDIGO (COUNTDOWN E MODALS) ---
 
       const countdownInterval = setInterval(() => {
         const distance = new Date(EVENT_DATE).getTime() - new Date().getTime();
