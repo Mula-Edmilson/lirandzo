@@ -1,0 +1,348 @@
+/* style.css */
+
+/* --- 1. ESTILOS GLOBAIS E VARIÁVEIS --- */
+:root {
+  --bg: #faf8f5;
+  --accent: #a16a50; /* Dourado (Escurecido para melhor contraste) */
+  --accent-muted: #363535; /* Cinza/Prata */
+  --muted: var(--accent-muted);
+  --text-dark: #3a2d25; /* Cor de texto mais escura para melhor legibilidade */
+  --card: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--bg);
+  background-image: url("https://i.postimg.cc/BbmmgqHs/15680936-5660126.jpg");
+  font-family: 'Cormorant Garamond', serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  color: var(--text-dark);
+}
+
+/* --- 2. ESTILOS DA PÁGINA DE CAPA (index.html) --- */
+.cover-container {
+  max-width: 400px;
+  padding: 30px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(176, 143, 92, 0.15);
+  text-align: center;
+}
+
+.couple-photo {
+  width: 100%;
+  height: 400px;
+  margin-bottom: 25px;
+  border-radius: 8px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  border: 1px solid rgba(176, 143, 92, 0.3);
+}
+
+.names {
+  font-family: 'Great Vibes', cursive;
+  font-size: 50px;
+  color: var(--accent);
+  margin: 0 0 10px;
+}
+
+.cover-subtitle {
+  font-family: 'Poppins', sans-serif;
+  color: var(--muted);
+  font-size: 14px;
+  margin-top: -10px;
+}
+
+.btn-cover {
+  width: 100%;
+  max-width: 250px;
+  margin-top: 15px;
+}
+
+/* --- 3. ESTILOS DO CONVITE (convite.html) --- */
+.invite-wrap {
+  width: 100%;
+  max-width: 680px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(176, 143, 92, 0.15);
+  position: relative;
+  background: var(--card);
+}
+
+h1, h2, h3 {
+  font-family: 'Cormorant Garamond', serif;
+  margin: 0;
+  color: var(--text-dark);
+  font-weight: 600;
+}
+h1 { font-size: 42px; }
+h2 { font-size: 32px; text-align: center; }
+h3 { font-size: 24px; }
+p { margin: 12px 0 18px; color: var(--muted); font-size: 18px; line-height: 1.6; }
+
+.section {
+  padding: 36px;
+  text-align: center;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 48px 36px 24px;
+  text-align: center;
+  height: 600px;
+  background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), url('https://i.postimg.cc/wB66B0vk/2T2A4873.jpg');
+  background-size: cover;
+  background-position: center 20%;
+  color: white;
+}
+.hero h1, .hero p { color: white; }
+.hero-content { padding: 18px 0; width: 100%; }
+.lead { font-family: 'Poppins', sans-serif; text-transform: uppercase; letter-spacing: 3px; font-size: 10px; margin: 0 0 12px; color: rgba(255, 255, 255, 0.8); }
+
+/* Countdown */
+#countdown {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+  margin-bottom: 25px;
+  width: 100%;
+}
+.countdown-item {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px 5px;
+  border-radius: 8px;
+  flex: 1;
+  max-width: 80px;
+  backdrop-filter: blur(4px);
+}
+.countdown-item span {
+  display: block;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: white;
+}
+.countdown-item small {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 4px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Botões */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  cursor: pointer;
+  border: none;
+  font-size: 16px;
+  transition: background-color .2s ease;
+  text-align: center;
+}
+.btn-primary {
+  background-color: var(--accent);
+  color: white;
+}
+.btn-primary:hover {
+  background-color: #7b513d;
+}
+.pill {
+  display: inline-block;
+  background: rgba(161, 106, 80, 0.1);
+  color: var(--accent);
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: none;
+  cursor: default;
+}
+.pill.interactive {
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(161, 106, 80, 0.3);
+}
+.pill.interactive:hover {
+  opacity: 0.9;
+}
+/* Estilos auxiliares */
+.text-muted {
+  color: var(--muted);
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+}
+.text-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Imagens e Grids */
+.history-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin: 20px 0;
+}
+.history-grid img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Gift Section */
+.gift-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid rgba(161, 106, 80, 0.2);
+  background: #fdfcfb;
+  margin-top: 20px;
+}
+.gift-card svg {
+  color: var(--accent);
+  width: 40px;
+  height: 40px;
+}
+.gift-card p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.gift-card .text-muted {
+  font-size: 14px;
+}
+
+/* Galeria */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 30px;
+}
+.gallery-grid img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: zoom-in;
+  transition: transform .2s ease;
+}
+.gallery-grid img:hover {
+  transform: scale(1.02);
+}
+
+/* --- 4. ANIMAÇÕES --- */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .6s ease-out, transform .6s ease-out;
+}
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- 5. ESTILOS DO MODAL (Pop-up) --- */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s, visibility .3s;
+}
+.modal.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-card {
+  position: relative;
+  background: var(--card);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 600px;
+  
+  max-height: 90vh; 
+  overflow-y: auto; 
+  
+  opacity: 0;
+  transform: scale(0.95);
+  transition: all .25s ease;
+}
+.modal.open .modal-card { 
+  transform: scale(1);
+  /* CORREÇÃO AQUI: Garante que o conteúdo do modal se torna visível */
+  /* Sem esta linha, a opacidade permanecia a 0, tornando o conteúdo invisível */
+  opacity: 1; 
+}
+
+/* Estilos de Formulário no Modal */
+.form-row { display: flex; gap: 10px; }
+label { display: block; margin-bottom: 4px; font-size: 13px; color: #333; font-family: 'Poppins', sans-serif; }
+input, textarea, select { width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #e6e6e6; font-size: 16px; font-family: 'Cormorant Garamond', serif; }
+textarea { min-height: 100px; }
+.contact-info-block { text-align: left; padding: 12px; border: 1px solid #eee; border-radius: 8px; margin-bottom: 10px; }
+.contact-info-block strong { color: var(--accent); font-family: 'Poppins', sans-serif; font-size: 14px; }
+/* Adicione esta regra ao seu style.css, por exemplo, perto dos outros estilos de botão */
+.small-map-btn {
+    display: block; /* Ocupa a largura total do item da agenda */
+    width: fit-content;
+    margin: 8px 0 0 auto; /* Alinha o botão à direita */
+    padding: 5px 10px;
+    font-size: 13px;
+    font-family: 'Poppins', sans-serif;
+    border: 1px solid var(--accent-muted);
+    color: var(--accent-muted);
+}
+.small-map-btn:hover {
+    background: rgba(54, 53, 53, 0.05);
+}
+/* Botão de controlo da música */
+#musicControl { position: fixed; bottom: 15px; right: 15px; z-index: 101; background: rgba(255, 255, 255, 0.8); border: 1px solid #eee; border-radius: 50%; width: 40px; height: 40px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); }
+#musicControl:hover { background: rgba(255, 255, 255, 1); }
+#musicIcon { color: var(--accent); }
+#musicControl.playing #musicIcon { animation: spin 2s linear infinite; }
+@keyframes spin { 100% { transform: rotate(360deg); } }

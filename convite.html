@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Convite de Casamento — Anícia & Nelson</title>
+  
+  <meta property="og:title" content="Convite de Casamento — Anícia & Nelson">
+  <meta property="og:description" content="Junte-se a nós para celebrar o nosso casamento e o início de uma nova etapa das nossas vidas.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://static.wixstatic.com/media/819ea0_b4ef6562eb6d4a4b9b4a2b2cf908c93f~mv2.jpg">
+  <meta property="og:url" content="URL_DO_SEU_SITE_AQUI">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Great+Vibes&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <audio id="backgroundMusic" loop src="https://static.wixstatic.com/mp3/819ea0_e333d443f2f545e59d79429cdd3c1361.mp3"></audio>
+  <button id="musicControl" aria-label="Controlar música">
+    <svg id="musicIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13M9 18a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM21 16a4 4 0 1 1-8 0 4 4 0 0 1 8 0z"/></svg>
+  </button>
+  
+  <main class="invite-wrap" role="main" aria-labelledby="inviteTitle">
+    
+    <header class="hero">
+     
+      <div class="hero-content">
+        <p class="lead">CONVIDAMO-LO(A) A CELEBRAR O NOSSO CASAMENTO</p>
+        <h1 id="inviteTitle">ANÍCIA & NELSON</h1>
+        <div id="countdown">
+            <div class="countdown-item"><span id="days">00</span><small>Dias</small></div>
+            <div class="countdown-item"><span id="hours">00</span><small>Horas</small></div>
+            <div class="countdown-item"><span id="minutes">00</span><small>Minutos</small></div>
+            <div class="countdown-item"><span id="seconds">00</span><small>Segundos</small></div>
+        </div>
+      </div>
+    </header>
+
+    <section class="section fade-in-section" id="nossa-historia" aria-labelledby="historyTitle">
+      
+      <p style="margin: 0 0 10px; font-size:20px;">
+        Para que todos vejam, e saibam, e considerem, e juntamente entendam que a mão do SENHOR fez isso. 
+      </p>
+      <p style="margin: 0 0 10px; font-size:20px;">
+        Isaías 41:20 </p>
+      
+      <h3 class="section-title">OS NOIVOS</h3>
+      
+      <div class="history-grid">
+          <img src="https://i.postimg.cc/g0NGL8XV/2T2A4909.jpg" alt="Foto do primeiro encontro do casal">
+      </div>
+      
+      <h3 class="section-title">ANÍCIA</h3>
+      
+      <p style="margin: 0 0 10px; font-size:18px;">
+        Filha de: ARSÉNIO FILIPE (em memória) e de INES MATSINHE
+      </p>
+      
+      <h3 class="section-title">NELSON</h3>
+      
+      <p style="margin: 0 0 10px; font-size:18px;">
+        Filho de: ANTÓNIO XERIDA e de RITA
+      </p>
+      
+      <h3 class="section-title">COM A BENÇÃO DE DEUS</h3>
+      <p style="margin: 0; font-size:18px;">
+        Temos a honra de convida-lo(a) a comemorar esta data especial connosco. Venha juntar-se a nós e ajudar-nos a celebrar o nosso casamento de acordo com o programa abaixo:
+      </p>
+    </section>
+      
+    <section class="section fade-in-section" style="padding-top: 30px; padding-bottom: 30px; background: #f7f3ef; border-radius: 12px; margin: 0 36px;" aria-label="Detalhes do evento">
+      <h3 class="section-title">🗓 Agenda do Evento</h3>
+      <div class="pill">Data: 13 Dezembro 2025</div>
+  
+      <div class="agenda-grid" style="margin-top: 24px; text-align: left; max-width: 400px; margin-left: auto; margin-right: auto; font-family: 'Poppins', sans-serif;">
+          <div class="agenda-item" style="padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.05);">
+              <div style="display: flex; justify-content: space-between;">
+                  <span>⛪︎ Cerimónia Religiosa</span>
+                  <strong>09:00</strong>
+              </div>
+              <a href="#" class="btn btn-outline small-map-btn" id="mapBtnReligiosa" target="_blank" rel="noopener noreferrer">Ver Mapa</a>
+          </div>
+          <div class="agenda-item" style="padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.05);">
+              <div style="display: flex; justify-content: space-between;">
+                  <span>♔ Cerimónia Civil</span>
+                  <strong>13:30</strong>
+              </div>
+              <a href="#" class="btn btn-outline small-map-btn" id="mapBtnCivil" target="_blank" rel="noopener noreferrer">Ver Mapa</a>
+          </div>
+          <div class="agenda-item" style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.05);">
+              <span>📷 Secção de Fotos</span>
+              <strong>14:30</strong>
+          </div>
+          <div class="agenda-item" style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.05);">
+              <span>𐃯 Copo de Água</span>
+              <strong>15:30</strong>
+          </div>
+          <div class="agenda-item" style="display: flex; justify-content: space-between; padding: 10px 0;">
+              <span>♥ Saída dos Noivos</span>
+              <strong>22:00</strong>
+          </div>
+      </div>
+    </section>
+    
+    <section class="section fade-in-section">
+      <div class="history-grid">
+            <img src="https://i.postimg.cc/9fJcwZRS/2T2A4974.jpg" alt="Momentos especiais do casal">
+            <img src="https://i.postimg.cc/MGdzfVMm/2T2A4899.jpg" alt="Foto do pedido de noivado">
+            <img src="https://i.postimg.cc/BvMJPHLF/2-T2-A4865-2.jpg" alt="Foto de uma viagem recente do casal">
+      </div>
+    </section>
+
+    <section class="section fade-in-section " id="guia-evento" aria-labelledby="guiaTitle" style="margin-top: 10px; padding-top: 20px; padding-bottom: 30px; background: #f7f3ef; border-radius: 20px; margin: 0 36px;">
+        <h2 id="guiaTitle">Guia do Evento</h2>
+        <p class="text-muted">Tudo o que precisa de saber para celebrar connosco.</p>
+    
+        <div style="margin-top:30px;">
+            <h3>Inspiração de Vestuário</h3>
+            <p class="text-muted" style="margin-bottom: 12px;">Não sabe o que vestir? Deixamos aqui sugestões no estilo casual elegante.</p>
+            <button class="pill interactive" id="dressCodeBtn">Ver Sugestões de Traje</button>
+        </div>
+
+        <div style="margin-top:30px;">
+            <h3>Um Mimo para o Futuro</h3>
+            <p class="text-muted" style="margin-bottom: 12px;">A sua presença é o maior presente! Se, ainda assim, desejar contribuir, pode fazê-lo aqui.</p>
+            <button class="pill interactive" id="giftBtn">Ver Opções de Contribuição</button>
+        </div>
+    
+        <div style="margin-top:40px;">
+             <h3>Confirme a Sua Presença</h3>
+             <p class="text-muted" style="margin-bottom: 18px;">Por favor, informe-nos se poderemos contar consigo até ao dia **30 de Novembro de 2025**.</p>
+             <div class="action-buttons">
+                <button class="btn btn-primary" id="rsvpBtn">Confirmar Presença</button>
+                <a href="#" class="btn btn-outline" id="mapBtn" target="_blank" rel="noopener noreferrer">Como Chegar ao Local</a>
+             </div>
+        </div>
+    </section>
+    
+    <div class="actions fade-in-section" style="padding-top:30PX;">
+        <button class="btn btn-ghost" id="shareBtn">Partilhar Convite</button>
+        <div style="flex:1"></div>
+        <div style="display:flex;gap:8px;align-items:center;margin-top:12px">
+          <span class="small">Tem dúvidas? <strong>Contacto:</strong> +258 84 679 7664</span>
+        </div>
+    </div>
+    
+    <footer class="note fade-in-section">Este convite é interactivo. Esperamos por si!</footer>
+
+  </main>
+
+  <div class="modal" id="rsvpModal" role="dialog" aria-modal="true" aria-labelledby="rsvpTitle">
+    <div class="modal-card">
+      <h3 id="rsvpTitle">Confirmar Presença</h3>
+      <p class="small">Preencha os dados e escolha como enviar a confirmação.</p>
+      <form id="rsvpForm">
+        <div style="margin-top:12px"><label for="nome">Nome completo</label><input type="text" id="nome" required placeholder="Ex: Edson Nhantumbo"></div>
+        <div style="margin-top:12px" class="form-row">
+          <div style="flex:1"><label for="guests">Nº de convidados</label><select id="guests"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5+">5+</option></select></div>
+          <div style="flex:1"><label for="phone">Telefone (opcional)</label><input id="phone" placeholder="+258 84X XXX XXX"></div>
+        </div>
+        <div style="margin-top:12px"><label for="message">Mensagem (opcional)</label><textarea id="message" placeholder="Ex: Mal posso esperar por celebrar convosco!"></textarea></div>
+        <div style="display:flex;gap:10px;margin-top:18px;align-items:center;flex-wrap:wrap">
+          <button type="submit" class="btn btn-primary">Enviar por Email</button>
+          <button type="button" class="btn btn-outline" id="sendWhatsapp">Enviar por WhatsApp</button>
+          <button type="button" class="btn btn-ghost" data-close-modal>Fechar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal" id="dressCodeModal" role="dialog" aria-modal="true" aria-labelledby="dressCodeTitle">
+    <div class="modal-card" style="max-width: 580px;">
+        <h3 id="dressCodeTitle" style="text-align: center;">Inspiração: Casual Elegante</h3>
+        <p class="small" style="text-align: center;">O objetivo é o conforto sofisticado. Sugerimos tons pastel e neutros.</p>
+        <div class="dresscode-grid">
+            <img src="https://i.postimg.cc/851G7z4s/casual-elegante-1.jpg" alt="Homem com blazer bege e camisa branca.">
+            <img src="https://i.postimg.cc/Y92K9z9n/casual-elegante-2.jpg" alt="Mulher com vestido floral midi.">
+            <img src="https://i.postimg.cc/Xv8g4x1d/casual-elegante-3.jpg" alt="Homem com calças de linho e camisa de botões.">
+            <img src="https://i.postimg.cc/sX1G0z11/casual-elegante-4.jpg" alt="Mulher com saia plissada e blusa de seda.">
+        </div>
+        <button type="button" class="btn btn-ghost" data-close-modal style="width:100%; margin-top:15px">Entendi</button>
+    </div>
+  </div>
+
+  <div class="modal" id="giftModal" role="dialog" aria-modal="true" aria-labelledby="giftTitle">
+    <div class="modal-card">
+        <h3 id="giftTitle" style="text-align: center;">Contribuição para o Nosso Futuro</h3>
+        <p class="small" style="text-align: center;">Sua presença é o mais importante! Se quiser contribuir, aqui estão as opções. O valor é livre.</p>
+        <div class="contact-info-block"><p style="margin:0;color:#333;font-size:16px;"><strong>Conta Bancária (BIM)</strong></p><p class="small" style="margin-top:4px;">Titular: Anícia Filipe<br>Nº da Conta: 404855982<br>NIB: 000100000040485598257</p></div>
+        <div class="contact-info-block"><p style="margin:0;color:#333;font-size:16px;"><strong>M-Pesa / e-Mola</strong></p><p class="small" style="margin-top:4px;">Número: +258 84 723 0763 (Nelson Xerinda)<br>Número: +258 878797664 (Anícia Filipe)</p></div>
+        <button type="button" class="btn btn-primary" data-close-modal style="width:100%; margin-top:15px">Obrigado(a)!</button>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      // --- CONFIGURAÇÕES CORRIGIDAS ---
+      const HOST_WHATSAPP_NUMBER = '+258846797664';
+      // Endereços separados (usando os códigos Plus Code para maior precisão)
+      const ADDRESS_RELIGIOSA = '5J7R+GFJ Igreja presbiteriana- paróquia de Guava, Marracuene';
+      const ADDRESS_CIVIL_COPO_DE_AGUA = '6H3J+R8J Chakara Do Amor Eventos, Zimpeto - Moçambique!, Maputo'; 
+      const EVENT_DATE = "2025-12-13T09:00:00"; 
+      const RSVP_EMAIL = "aniciayf@gmail.com";
+      
+      const music = document.getElementById('backgroundMusic');
+      const musicControl = document.getElementById('musicControl');
+      const rsvpForm = document.getElementById('rsvpForm');
+      
+      // As variáveis para os botões do mapa estão prontas:
+      const mapBtnGeral = document.getElementById('mapBtn');
+      const mapBtnReligiosa = document.getElementById('mapBtnReligiosa'); 
+      const mapBtnCivil = document.getElementById('mapBtnCivil');
+      const shareBtn = document.getElementById('shareBtn');
+      
+      // --- BLOCO DE CONTROLO DE MÚSICA (Robusto) ---
+      const updateMusicIcon = () => {
+        musicControl.innerHTML = music.paused 
+            ? `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5zM23 9l-6 6M17 9l6 6"/></svg>`
+            : `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13M9 18a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM21 16a4 4 0 1 1-8 0 4 4 0 0 1 8 0z"/></svg>`;
+        musicControl.classList.toggle('playing', !music.paused);
+      };
+
+      const tryAutoplay = music.play();
+      if (tryAutoplay !== undefined) {
+        tryAutoplay.catch(error => {
+          const playOnFirstInteraction = () => {
+            music.play().then(() => {
+              sessionStorage.setItem('musicPlayed', 'true');
+              updateMusicIcon();
+              document.removeEventListener('click', playOnFirstInteraction);
+              document.removeEventListener('touchstart', playOnFirstInteraction);
+            }).catch(e => console.warn("Falha ao reproduzir após interação: ", e));
+          };
+          document.addEventListener('click', playOnFirstInteraction);
+          document.addEventListener('touchstart', playOnFirstInteraction);
+        });
+      }
+      
+      musicControl.addEventListener('click', () => {
+          music.paused ? music.play() : music.pause();
+          sessionStorage.setItem('musicPlayed', !music.paused);
+          updateMusicIcon();
+      });
+      
+      updateMusicIcon();
+
+      // --- CORREÇÃO DO GOOGLE MAPS ---
+      // FUNÇÃO AUXILIAR PARA CRIAR LINKS DO GOOGLE MAPS
+      const createMapLink = (address) => {
+        const encodedAddress = encodeURIComponent(address);
+        // O URL CORRETO para abrir no Google Maps:
+        return `https://www.google.com/maps/search/?api=1&query=${encodedAddress}`; 
+      };
+
+      // ATUALIZADO E CORRIGIDO: Aplica os links do Google Maps aos botões
+      if (mapBtnGeral) mapBtnGeral.href = createMapLink(ADDRESS_CIVIL_COPO_DE_AGUA); 
+      // Estes botões funcionarão se você os adicionar ao seu HTML:
+      if (mapBtnReligiosa) mapBtnReligiosa.href = createMapLink(ADDRESS_RELIGIOSA);
+      if (mapBtnCivil) mapBtnCivil.href = createMapLink(ADDRESS_CIVIL_COPO_DE_AGUA); 
+
+      // --- RESTANTE DO CÓDIGO ---
+
+      const countdownInterval = setInterval(() => {
+        const distance = new Date(EVENT_DATE).getTime() - new Date().getTime();
+        if (distance < 0) {
+          clearInterval(countdownInterval);
+          document.getElementById("countdown").innerHTML = "O GRANDE DIA CHEGOU!";
+          return;
+        }
+        const format = (num) => String(num).padStart(2, '0');
+        document.getElementById("days").innerText = format(Math.floor(distance / (1000 * 60 * 60 * 24)));
+        document.getElementById("hours").innerText = format(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+        document.getElementById("minutes").innerText = format(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)));
+        document.getElementById("seconds").innerText = format(Math.floor((distance % (1000 * 60)) / 1000));
+      }, 1000);
+
+      const setupModal = (buttonId, modalId) => {
+          const button = document.getElementById(buttonId);
+          const modal = document.getElementById(modalId);
+          if (!button || !modal) return;
+          
+          button.addEventListener('click', () => modal.classList.add('open'));
+          modal.addEventListener('click', (e) => {
+              if (e.target === modal || e.target.closest('[data-close-modal]')) {
+                  modal.classList.remove('open');
+              }
+          });
+      };
+      
+      setupModal('rsvpBtn', 'rsvpModal');
+      setupModal('dressCodeBtn', 'dressCodeModal');
+      setupModal('giftBtn', 'giftModal');
+
+      const getRsvpData = () => ({
+        nome: document.getElementById('nome').value.trim(),
+        guests: document.getElementById('guests').value,
+        phone: document.getElementById('phone').value.trim(),
+        message: document.getElementById('message').value.trim()
+      });
+
+      rsvpForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const data = getRsvpData();
+        
+        if (!data.nome) {
+          alert('Por favor, preencha o seu nome completo.');
+          document.getElementById('nome').focus();
+          return;
+        }
+        
+        const subject = encodeURIComponent('RSVP — Confirmação de Presença Anícia & Nelson');
+        const body = `Nome: ${data.nome}%0D%0AConvidados: ${data.guests}%0D%0ATelefone: ${data.phone}%0D%0AMensagem: ${data.message}`;
+        window.location.href = `mailto:${RSVP_EMAIL}?subject=${subject}&body=${body}`;
+        document.getElementById('rsvpModal').classList.remove('open');
+      });
+
+      document.getElementById('sendWhatsapp').addEventListener('click', () => {
+        const data = getRsvpData();
+        if (!data.nome) { 
+          alert('Por favor, preencha o seu nome completo.');
+          document.getElementById('nome').focus(); 
+          return; 
+        }
+        const text = `RSVP - Olá! Confirmo a minha presença. Nome: ${data.nome}, Convidados: ${data.guests}. Mensagem: ${data.message}`;
+        const waUrl = `https://wa.me/${HOST_WHATSAPP_NUMBER.replace(/\D/g,'')}?text=${encodeURIComponent(text)}`;
+        window.open(waUrl, '_blank');
+        document.getElementById('rsvpModal').classList.remove('open');
+      });
+      
+      shareBtn.addEventListener('click', async () => {
+        const shareData = {
+          title: 'Convite de Casamento — Anícia & Nelson',
+          text: 'Junte-se a nós para celebrar o nosso casamento! Confirme a sua presença aqui:',
+          url: window.location.href
+        };
+        try {
+          if (navigator.share) {
+            await navigator.share(shareData);
+          } else {
+            await navigator.clipboard.writeText(`${shareData.text}\n${shareData.url}`);
+            alert('Link do convite copiado para a área de transferência.');
+          }
+        } catch (err) { console.error('Erro ao partilhar:', err); }
+      });
+      
+      const animatedSections = document.querySelectorAll('.fade-in-section');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      animatedSections.forEach(section => observer.observe(section));
+    });
+  </script>
+</body>
+</html>

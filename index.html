@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Anícia & Nelson — O Nosso Casamento</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Great+Vibes&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <audio id="backgroundMusic" loop src="https://static.wixstatic.com/mp3/819ea0_d5df02790a874b229711c5110321cf00.mp3"></audio>
+  
+  <div class="cover-container">
+    <h1 class="names">Anícia & Nelson</h1>
+    <p class="cover-subtitle">Com Carinho, o Nosso Casamento</p>
+    
+    <div class="couple-photo" style="background-image: url('https://i.postimg.cc/cC4jqmT6/2T2A4882.jpg')">
+    </div>
+    
+    <button class="btn btn-primary btn-cover" id="openInviteBtn">Abrir Convite</button>
+  </div>
+
+  <script>
+    const music = document.getElementById('backgroundMusic');
+    const openInviteBtn = document.getElementById('openInviteBtn');
+    
+    openInviteBtn.addEventListener('click', function() {
+      // Tenta tocar a música. A interação do utilizador é necessária na maioria dos navegadores.
+      music.play().catch(error => {
+        console.warn("A reprodução automática da música falhou. Isso é normal em alguns navegadores.", error);
+      });
+      
+      // Salva no armazenamento da sessão que a música deve tocar
+      sessionStorage.setItem('musicPlayed', 'true');
+
+      // REFINADO: Navega para a página do convite na mesma aba para uma melhor experiência.
+      window.location.href = 'convite.html';
+    });
+  </script>
+</body>
+</html>
