@@ -23,7 +23,7 @@ body {
   margin: 0;
   min-height: 100vh;
   background-color: var(--bg);
-  background-image: url("https://i.postimg.cc/VvkgXPwr/19624070-F917.jpg");
+  background-image: url("https://i.postimg.cc/VvkgXPwr/19624070-F917.jpg"); /* Imagem de fundo do convite */
   /* Parallax Scroll no Background */
   background-attachment: fixed; 
   background-position: center top; 
@@ -33,6 +33,15 @@ body {
   justify-content: center;
   padding: 24px;
   color: var(--text-dark);
+}
+
+/* NOVO: Background específico para a página de capa (index.html) */
+body.cover-page {
+    /* Mude esta URL para a sua nova imagem de fundo da capa */
+    background-image: url("https://i.postimg.cc/BvMJPHLF/2-T2-A4865-2.jpg"); 
+    background-position: center center;
+    background-size: cover;
+    background-attachment: scroll; /* Scroll normal para a capa, se preferir */
 }
 
 /* Estilo para a transição inicial (Carregamento Suave) */
@@ -234,13 +243,13 @@ p { margin: 12px 0 18px; color: var(--muted); font-size: 18px; line-height: 1.6;
   display: inline-block;
   background: rgba(161, 106, 80, 0.1);
   color: var(--accent);
-  padding: 8px 16px;
+  padding: 12px 20px;
   border-radius: 50px;
   font-family: 'Poppins', sans-serif;
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.8px;
   border: none;
   cursor: default;
 }
