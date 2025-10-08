@@ -38,7 +38,7 @@ body {
 /* NOVO: Background específico para a página de capa (index.html) */
 body.cover-page {
     /* Mude esta URL para a sua nova imagem de fundo da capa */
-    background-image: url("https://i.postimg.cc/BvMJPHLF/2-T2-A4865-2.jpg"); 
+    background-image: url("https://i.postimg.cc/VvkgXPwr/19624070-F917.jpg"); 
     background-position: center center;
     background-size: cover;
     background-attachment: scroll; /* Scroll normal para a capa, se preferir */
@@ -497,4 +497,5 @@ textarea { min-height: 100px; }
     stroke: currentColor;
     stroke-width: 2;
     fill: none;
+
 }
