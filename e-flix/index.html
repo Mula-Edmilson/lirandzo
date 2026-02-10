@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pt" class="dark-theme">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Flix | Streaming Premium Ultra HD</title>
+    <meta name="description" content="Streaming premium em ultra definição com conteúdo exclusivo. Assista filmes, séries e lançamentos em 4K.">
+    
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎬</text></svg>">
+    
+    <style>
+        /* Loading State */
+        .app-loading {
+            position: fixed;
+            inset: 0;
+            background: #050505;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+        
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(138, 43, 226, 0.3);
+            border-top-color: #8a2be2;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div id="app-loading" class="app-loading" aria-live="polite" aria-label="Carregando aplicação">
+        <div class="loader" aria-hidden="true"></div>
+        <span class="visually-hidden">Carregando E-Flix...</span>
+    </div>
+    
+    <!-- Skip to Main Content -->
+    <a href="#main-content" class="skip-to-main">Saltar para conteúdo principal</a>
+    
+    <!-- Mobile Navigation -->
+    <header class="mobile-header glass-panel" role="banner">
+        <button class="hamburger" id="mobileMenuToggle" 
+                aria-label="Menu de navegação" aria-expanded="false" aria-controls="mobileNav">
+            <i class="fas fa-bars" aria-hidden="true"></i>
+        </button>
+        
+        <div class="logo-mobile" aria-label="E-Flix">
+            <i class="fas fa-play-circle" aria-hidden="true"></i>
+            <span>E-FLIX</span>
+        </div>
+        
+        <button class="watchlist-btn" id="watchlistBtnMobile" 
+                aria-label="Minha lista de observação">
+            <i class="fas fa-bookmark" aria-hidden="true"></i>
+            <span class="watchlist-badge" id="watchlist-badge" aria-live="polite">0</span>
+        </button>
+    </header>
+    
+    <!-- Mobile Navigation Drawer -->
+    <nav id="mobileNav" class="mobile-nav glass-panel" role="navigation" 
+         aria-label="Menu principal mobile" aria-hidden="true">
+        <div class="mobile-nav__header">
+            <div class="mobile-user">
+                <i class="fas fa-user-circle" aria-hidden="true"></i>
+                <span>Convidado</span>
+            </div>
+            <button class="close-menu" id="closeMobileMenu" 
+                    aria-label="Fechar menu">
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+        </div>
+        
+        <div class="mobile-nav__content">
+            <a href="#tab-home" class="mobile-nav-item active" data-tab="home" role="menuitem">
+                <i class="fas fa-th-large" aria-hidden="true"></i>
+                <span>Início</span>
+            </a>
+            
+            <a href="#tab-filmes" class="mobile-nav-item" data-tab="filmes" role="menuitem">
+                <i class="fas fa-film" aria-hidden="true"></i>
+                <span>Filmes</span>
+            </a>
+            
+            <a href="#tab-series" class="mobile-nav-item" data-tab="series" role="menuitem">
+                <i class="fas fa-tv" aria-hidden="true"></i>
+                <span>Séries</span>
+            </a>
+            
+            <a href="#tab-new" class="mobile-nav-item" data-tab="new" role="menuitem">
+                <i class="fas fa-sparkles" aria-hidden="true"></i>
+                <span>Lançamentos 2025</span>
+            </a>
+            
+            <a href="#tab-watchlist" class="mobile-nav-item" data-tab="watchlist" role="menuitem">
+                <i class="fas fa-bookmark" aria-hidden="true"></i>
+                <span>Minha Lista</span>
+                <span class="nav-badge" id="mobile-watchlist-badge">0</span>
+            </a>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero" role="banner" aria-label="Destaque principal">
+        <div class="hero__gradient"></div>
+        
+        <div class="hero__content">
+            <div class="logo-container">
+                <i class="fas fa-play-circle logo-icon" aria-hidden="true"></i>
+                <h1 class="logo-text">
+                    <span class="logo-part">E-</span>
+                    <span class="logo-part">FLIX</span>
+                </h1>
+            </div>
+            
+            <p class="hero__subtitle">Streaming premium em ultra definição | Conteúdo exclusivo</p>
+            
+            <div class="hero__search">
+                <div class="search-wrapper">
+                    <input type="text" 
+                           id="searchInputHero" 
+                           class="search-input"
+                           placeholder="O que pretende assistir hoje?"
+                           aria-label="Pesquisar filmes e séries"
+                           autocomplete="off"
+                           spellcheck="false">
+                    <i class="fas fa-search search-icon" aria-hidden="true"></i>
+                </div>
+            </div>
+            
+            <div class="hero__stats" aria-label="Estatísticas da plataforma">
+                <div class="stat">
+                    <span class="stat__number">50+</span>
+                    <span class="stat__label">Títulos</span>
+                </div>
+                <div class="stat">
+                    <span class="stat__number">4K</span>
+                    <span class="stat__label">Qualidade</span>
+                </div>
+                <div class="stat">
+                    <span class="stat__number">24/7</span>
+                    <span class="stat__label">Disponível</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Main Layout -->
+    <div class="app-container">
+        <!-- Sidebar - Desktop -->
+        <aside class="sidebar glass-panel" role="complementary" aria-label="Navegação principal">
+            <div class="sidebar__header">
+                <div class="logo-small" aria-hidden="true">
+                    <i class="fas fa-play-circle"></i>
+                </div>
+                
+                <button class="watchlist-btn" id="watchlistBtnDesktop" 
+                        aria-label="Minha lista de observação">
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                    <span class="watchlist-badge" id="desktop-watchlist-badge" aria-live="polite">0</span>
+                </button>
+            </div>
+            
+            <nav class="sidebar__nav" role="navigation" aria-label="Menu principal">
+                <ul class="nav-menu" role="menubar">
+                    <li role="none">
+                        <a href="#tab-home" 
+                           class="nav-item active" 
+                           data-tab="home"
+                           role="menuitem" 
+                           aria-current="page">
+                            <i class="fas fa-th-large" aria-hidden="true"></i>
+                            <span>Início</span>
+                        </a>
+                    </li>
+                    
+                    <li role="none">
+                        <a href="#tab-filmes" 
+                           class="nav-item" 
+                           data-tab="filmes"
+                           role="menuitem">
+                            <i class="fas fa-film" aria-hidden="true"></i>
+                            <span>Filmes</span>
+                        </a>
+                    </li>
+                    
+                    <li role="none">
+                        <a href="#tab-series" 
+                           class="nav-item" 
+                           data-tab="series"
+                           role="menuitem">
+                            <i class="fas fa-tv" aria-hidden="true"></i>
+                            <span>Séries</span>
+                        </a>
+                    </li>
+                    
+                    <li role="none">
+                        <a href="#tab-new" 
+                           class="nav-item" 
+                           data-tab="new"
+                           role="menuitem">
+                            <i class="fas fa-sparkles" aria-hidden="true"></i>
+                            <span>Lançamentos</span>
+                            <span class="nav-badge">2025</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        
+        <!-- Main Content -->
+        <main id="main-content" class="main-content" role="main">
+            <!-- Main Header -->
+            <header class="main-header" role="banner">
+                <div class="search-container glass-panel" id="searchBox">
+                    <i class="fas fa-search" aria-hidden="true"></i>
+                    <input type="text" 
+                           id="globalSearch" 
+                           class="search-input"
+                           placeholder="Pesquisar por título, ator ou gênero..."
+                           aria-label="Pesquisar no catálogo"
+                           autocomplete="off"
+                           spellcheck="false">
+                </div>
+                
+                <div class="user-actions">
+                    <div class="status" aria-live="polite">
+                        <i class="fas fa-circle" aria-hidden="true"></i>
+                        SESSÃO ATIVA
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Content Pages -->
+            <div class="content-pages">
+                <!-- Home -->
+                <section id="tab-home" class="page-section active" role="region" aria-label="Página inicial">
+                    <div class="page-header">
+                        <div class="title-group">
+                            <h1>Biblioteca Premium</h1>
+                            <p>Navegação ultra-rápida pelo catálogo principal em 4K</p>
+                        </div>
+                    </div>
+                    
+                    <div class="content-grid">
+                        <div class="grid" id="grid-home" role="list" aria-label="Lista de conteúdos"></div>
+                    </div>
+                </section>
+                
+                <!-- Movies -->
+                <section id="tab-filmes" class="page-section" role="region" aria-label="Página de filmes">
+                    <div class="page-header">
+                        <div class="title-group">
+                            <h1>Filmes em 4K</h1>
+                            <p>Cinema puro, sem distrações visuais. Coleção premium.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="content-grid">
+                        <div class="grid" id="grid-filmes" role="list" aria-label="Lista de filmes"></div>
+                    </div>
+                </section>
+                
+                <!-- Series -->
+                <section id="tab-series" class="page-section" role="region" aria-label="Página de séries">
+                    <div class="page-header">
+                        <div class="title-group">
+                            <h1>Séries Exclusivas</h1>
+                            <p>Acompanhe os seus episódios favoritos em qualidade premium.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="content-grid">
+                        <div class="grid" id="grid-series" role="list" aria-label="Lista de séries"></div>
+                    </div>
+                </section>
+                
+                <!-- New Releases -->
+                <section id="tab-new" class="page-section" role="region" aria-label="Página de lançamentos">
+                    <div class="page-header">
+                        <div class="title-group">
+                            <h1>Estreias 2025</h1>
+                            <p>Conteúdo exclusivo adicionado recentemente em ultra definição.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="content-grid">
+                        <div class="grid" id="grid-new" role="list" aria-label="Lista de lançamentos"></div>
+                    </div>
+                </section>
+                
+                <!-- Watchlist -->
+                <section id="tab-watchlist" class="page-section" role="region" aria-label="Minha lista">
+                    <div class="page-header">
+                        <div class="title-group">
+                            <h1>Minha Lista</h1>
+                            <p>Conteúdo salvo para assistir quando quiser.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="content-grid">
+                        <div class="grid" id="grid-watchlist" role="list" aria-label="Lista de observação"></div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Episode Drawer -->
+    <aside class="drawer glass-panel" id="ep-drawer" role="dialog" 
+           aria-modal="true" aria-label="Lista de episódios" aria-hidden="true">
+        <div class="drawer__header">
+            <button id="closeDrawerBtn" class="back-button" aria-label="Voltar">
+                <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                VOLTAR
+            </button>
+            <h2 id="series-title" class="drawer__title"></h2>
+        </div>
+        
+        <div class="drawer__content">
+            <div class="ep-list" id="ep-list" role="list" aria-label="Episódios"></div>
+        </div>
+    </aside>
+    
+    <!-- Video Player -->
+    <div class="player-overlay" id="player" role="dialog" aria-modal="true" aria-label="Reprodutor de vídeo">
+        <button class="close-player" id="closePlayerBtn" aria-label="Fechar reprodutor">
+            Sair do Player
+        </button>
+        <video id="v-element" controls playsinline aria-label="Vídeo em reprodução">
+            Seu navegador não suporta a reprodução de vídeo.
+        </video>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer glass-panel" role="contentinfo">
+        <div class="footer__content">
+            <div class="footer__brand">
+                <div class="footer-logo">
+                    <i class="fas fa-play-circle" aria-hidden="true"></i>
+                    <span>E-FLIX</span>
+                </div>
+                <p class="footer-tagline">Streaming premium em ultra definição</p>
+            </div>
+            
+            <div class="footer__bottom">
+                <p class="copyright">
+                    &copy; 2026 E-FLIX | Design Minimalista & Premium<br>
+                    Todos os direitos reservados | Conteúdo exclusivo para assinantes
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Single JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

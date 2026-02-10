@@ -1,0 +1,92 @@
+{
+  "metadata": {
+    "version": "2.0",
+    "lastUpdated": "2025-01-15",
+    "totalItems": 45
+  },
+  "content": {
+    "movies": [
+      {
+        "id": "5028",
+        "title": "Creed III",
+        "description": "Adonis Creed enfrenta um oponente do passado na maior luta de sua vida.",
+        "year": 2023,
+        "duration": "2h 16m",
+        "rating": 7.2,
+        "genres": ["Drama", "Esporte"],
+        "cast": ["Michael B. Jordan", "Tessa Thompson"],
+        "director": "Michael B. Jordan",
+        "thumbnail": "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=300&h=450&fit=crop",
+        "poster": "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w-1200&h=675&fit=crop",
+        "videoUrl": "http://cinetop.co.mz:8330/film/CreedIII2023.MP4",
+        "quality": ["1080p", "4K"],
+        "subtitles": ["pt", "en", "es"],
+        "category": "filmes",
+        "tags": ["boxe", "drama", "sequel"],
+        "featured": true,
+        "watchlistCount": 1250,
+        "releaseDate": "2023-03-03",
+        "createdAt": "2025-01-10T10:00:00Z",
+        "updatedAt": "2025-01-10T10:00:00Z"
+      }
+    ],
+    "series": [
+      {
+        "id": "mandalorian-s3",
+        "title": "The Mandalorian",
+        "description": "Um guerreiro solitário explora a galáxia após a queda do Império.",
+        "year": 2023,
+        "rating": 8.7,
+        "genres": ["Ficção Científica", "Aventura"],
+        "cast": ["Pedro Pascal", "Giancarlo Esposito"],
+        "thumbnail": "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=300&h=450&fit=crop",
+        "category": "series",
+        "tags": ["star wars", "disney+", "space"],
+        "featured": true,
+        "seasons": [
+          {
+            "number": 3,
+            "episodes": [
+              {
+                "id": "5000",
+                "title": "Temporada 3 - Episódio 22",
+                "description": "Capítulo final da temporada.",
+                "duration": "38m",
+                "episodeNumber": 22,
+                "seasonNumber": 3,
+                "videoUrl": "http://cinetop.co.mz:8330/film/TheMandalorianSeason3Eps22.MP4",
+                "thumbnail": "https://images.unsplash.com/photo-1534447677768-be436bb09401?w-400&h=225&fit=crop",
+                "quality": ["1080p", "4K"],
+                "subtitles": ["pt", "en"],
+                "releaseDate": "2023-04-19",
+                "viewCount": 24500
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "newReleases": [
+      {
+        "id": "6330",
+        "title": "A Mão Que Balança o Berço",
+        "year": 2025,
+        "category": "new",
+        "featured": true,
+        "badge": "ESTREIA"
+      }
+    ]
+  },
+  "config": {
+    "player": {
+      "defaultQuality": "1080p",
+      "autoplay": false,
+      "volume": 0.7
+    },
+    "ui": {
+      "theme": "dark",
+      "gridColumns": 4,
+      "animationSpeed": "normal"
+    }
+  }
+}

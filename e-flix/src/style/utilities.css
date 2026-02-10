@@ -1,0 +1,71 @@
+/* Utility Classes */
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: var(--space-2xl);
+  color: var(--text-tertiary);
+}
+
+.empty-state i {
+  font-size: 3rem;
+  margin-bottom: var(--space-lg);
+  color: var(--text-disabled);
+}
+
+.empty-state h3 {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-sm);
+  color: var(--text-secondary);
+}
+
+.empty-state p {
+  font-size: 1rem;
+  color: var(--text-tertiary);
+}
+
+/* Skeleton Loading */
+.card--skeleton {
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: var(--space-md);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.card__skeleton {
+  width: 100%;
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.06) 25%,
+    rgba(255, 255, 255, 0.12) 50%,
+    rgba(255, 255, 255, 0.06) 75%
+  );
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border-radius: var(--radius-md);
+}
+
+.skeleton--image {
+  height: 150px;
+  width: 100%;
+  margin-bottom: var(--space-md);
+}
+
+.skeleton--text {
+  height: 16px;
+  width: 80%;
+  margin-bottom: var(--space-sm);
+}
+
+.skeleton--short {
+  width: 60%;
+}
+
+.skeleton--button {
+  height: 24px;
+  width: 40%;
+  margin-top: var(--space-md);
+}
